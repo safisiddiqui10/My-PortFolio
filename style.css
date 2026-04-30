@@ -1,0 +1,17 @@
+/* style.css — Standalone stylesheet (optional, already embedded in index.html) */
+/* This file is provided for those who prefer to separate CSS from HTML. */
+/* Simply copy the <style> content from index.html into this file and link it. */
+
+/* All custom styles are already included in the index.html <style> block */
+/* This includes: */
+/* - Glassmorphism utilities (.glass, .glass-light, .glass-hover) */
+/* - Hero gradient background */
+/* - Glow effects (.glow-purple, .glow-cyan, .text-glow) */
+/* - Custom scrollbar styling */
+/* - Timeline line */
+/* - Hover lift effects */
+/* - Mobile menu transitions */
+/* - Loading spinner */
+/* - Focus ring styles */
+
+/* Add any additional custom styles below */
