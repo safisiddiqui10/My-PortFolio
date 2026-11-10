@@ -1,0 +1,33 @@
+/* Theme tokens (RGB channels, consumed by Tailwind colors as rgb(var(--x) / alpha)) */
+:root {
+  color-scheme: light;
+  --paper: 240 241 246;
+  --paper-2: 227 229 239;
+  --ink: 20 23 46;
+  --ink-2: 74 79 106;
+  --ink-3: 93 98 128;
+  --surface: 255 255 255;
+  --ultrat: 59 59 214;
+  --deep: 20 23 46;
+  --deeper: 13 15 32;
+  /* Text-safe accents: darkened so small text meets WCAG AA (4.5:1) on paper, paper-2 and surface */
+  --tmint: 12 114 86;
+  --tpink: 207 48 104;
+  --tsaffron: 141 91 7;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: 15 17 32;
+  --paper-2: 25 28 51;
+  --ink: 236 238 248;
+  --ink-2: 180 185 208;
+  --ink-3: 144 150 180;
+  --surface: 22 25 52;
+  --ultrat: 143 143 255;
+  --deep: 8 9 24;
+  --deeper: 5 6 16;
+  --tmint: 127 227 196;
+  --tpink: 255 143 177;
+  --tsaffron: 245 179 53;
+}

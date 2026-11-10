@@ -1,0 +1,145 @@
+/*
+ * Custom styles carried over unchanged from the original index.html <style> block.
+ * Load order matters: this file is imported BEFORE tailwind.css, matching the
+ * original page where the Tailwind CDN appended its stylesheet after this block.
+ */
+
+svg.lucide {
+  stroke-width: 1.75;
+}
+
+/* Icon swaps */
+[data-theme="dark"] .icon-moon,
+:root:not([data-theme="dark"]) .icon-sun {
+  display: none;
+}
+
+#mobile-menu-btn[aria-expanded="false"] .icon-close,
+#mobile-menu-btn[aria-expanded="true"] .icon-open {
+  display: none;
+}
+
+::selection {
+  background: #f5b335;
+  color: #14172e;
+}
+
+:focus-visible {
+  outline: 2px solid rgb(var(--ultrat));
+  outline-offset: 2px;
+}
+
+.on-ink :focus-visible {
+  outline-color: #f5b335;
+}
+
+/* === HERO LOAD SEQUENCE (the one orchestrated moment) === */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise {
+  animation: rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .rise {
+    animation: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* === SKILL BANDS === (color comes from each band's `color` in src/data/skills.js) */
+.band {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.band[data-color="blue"] {
+  --bg: #3b3bd6;
+  --fg: #ffffff;
+  --chip: rgba(255, 255, 255, 0.14);
+  --chip-line: rgba(255, 255, 255, 0.3);
+}
+
+.band[data-color="mint"] {
+  --bg: #7fe3c4;
+  --fg: #14172e;
+  --chip: rgba(20, 23, 46, 0.08);
+  --chip-line: rgba(20, 23, 46, 0.25);
+}
+
+.band[data-color="saffron"] {
+  --bg: #f5b335;
+  --fg: #14172e;
+  --chip: rgba(20, 23, 46, 0.08);
+  --chip-line: rgba(20, 23, 46, 0.25);
+}
+
+.band[data-color="pink"] {
+  --bg: #ff8fb1;
+  --fg: #14172e;
+  --chip: rgba(20, 23, 46, 0.08);
+  --chip-line: rgba(20, 23, 46, 0.25);
+}
+
+.chip {
+  display: inline-block;
+  font-size: 13px;
+  line-height: 20px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: var(--chip);
+  border: 1px solid var(--chip-line);
+}
+
+/* Chips on the page background (outside a colored band), e.g. the /skills page */
+.chips-plain {
+  --chip: rgb(var(--surface));
+  --chip-line: rgb(var(--ink) / 0.14);
+}
+
+/* === NAVIGATION === */
+.nav-scrolled {
+  background: rgb(var(--paper));
+  border-bottom: 1px solid rgb(var(--ink) / 0.14);
+}
+
+/* Active nav link colors live in Navbar.jsx so its hover color can't override them. */
+
+/* Keep section headings clear of the fixed navbar when jumping to /#section links. */
+section[id] {
+  scroll-margin-top: 4rem;
+}
+
+.mobile-menu:not(.hidden) {
+  animation: rise 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* === LOADING SPINNER === */
+.spinner {
+  border: 2px solid rgba(240, 241, 246, 0.3);
+  border-top-color: #f0f1f6;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
