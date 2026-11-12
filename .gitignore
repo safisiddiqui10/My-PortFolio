@@ -1,2 +1,13 @@
 .env
 fav.png
+
+
+# Dependencies and build output
+node_modules/
+dist/
+
+/.claude
+# Local env overrides
+.env.local
+.env.*.local
+.env.example
